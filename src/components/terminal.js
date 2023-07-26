@@ -17,6 +17,7 @@ export default function Terminal() {
     }])
     const [userStack, setUserStack] = useState([])
     const [userInput, setUserInput] = useState('')
+    const [fullScreen, setFullScreen] = useState(false)
 
     const handleTerminal = () => {
 
@@ -71,7 +72,7 @@ export default function Terminal() {
 
     return (
         <div className='flex justify-center items-center w-100% min-h-screen bg-[url(../assets/images/bgimage.jpg)]'>
-            <div className='w-[70%] text-white rounded-[10px] bg-black bg-opacity-50 backdrop-blur-lg'>
+            <div className={`${fullScreen ? `w-full min-h-[100vh]` : `w-[70%] min-h-[50vh]`} transition-all ease-in-out duration-300 text-white rounded-[10px] bg-black bg-opacity-50 backdrop-blur-lg`}>
                 <div className='flex justify-between w-full bg-gray-200 rounded-t-[10px] text-black py-1.5' >
                     <div className='ml-2 flex items-center space-x-2'>
                         <FaCircle size={15} color='red' />
@@ -82,10 +83,10 @@ export default function Terminal() {
                         Terminal
                     </div>
                     <div className='mr-2 flex items-center'>
-                        <FiMaximize2 size={15} />
+                        <FiMaximize2 onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer' size={15} />
                     </div>
                 </div>
-                <div className='p-2 w-full min-h-[60vh] overflow-y-auto'>
+                <div className='p-2 w-full min-h-[50vh] overflow-y-auto'>
                     <div className='w-full flex flex-col'>
                         {startMessage && startMessage.length > 0 ? startMessage.map((msg) =>
                             <div className='font-medium'>
