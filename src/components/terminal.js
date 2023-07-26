@@ -70,8 +70,8 @@ export default function Terminal() {
     }, [startInterval])
 
     return (
-        <div className='flex justify-center items-center w-100% min-h-screen bg-gray-400'>
-            <div className='w-[70%] text-white rounded-[10px] bg-black'>
+        <div className='flex justify-center items-center w-100% min-h-screen bg-[url(../assets/images/bgimage.jpg)]'>
+            <div className='w-[70%] text-white rounded-[10px] bg-black bg-opacity-50 backdrop-blur-lg'>
                 <div className='flex justify-between w-full bg-gray-200 rounded-t-[10px] text-black py-1.5' >
                     <div className='ml-2 flex items-center space-x-2'>
                         <FaCircle size={15} color='red' />
@@ -99,7 +99,7 @@ export default function Terminal() {
                             <div className='flex flex-col w-full'>
                                 <div className={`${index !== 0 ? `flex` : `hidden`}`}>
                                     {item.valid ?
-                                        <p>{item.answer}</p>
+                                        <div>{item.answer.split('\n').map((ans) => <p>{ans}</p>)}</div>
                                         :
                                         <p className='text-red-600'>{item.answer} {userStack[index - 1]}</p>
                                     }
