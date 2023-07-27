@@ -110,8 +110,8 @@ export default function Terminal() {
             // className='p-2 w-full h-[50vh] overflow-y-auto'
             >
                 <div className='w-full flex flex-col'>
-                    {startMessage && startMessage.length > 0 ? startMessage.map((msg) =>
-                        <div className='font-medium'>
+                    {startMessage && startMessage.length > 0 ? startMessage.map((msg, index) =>
+                        <div key={index} className='font-medium'>
                             {msg}
                         </div>
                     ) : null}
@@ -122,7 +122,7 @@ export default function Terminal() {
                         <div key={index} className='flex flex-col w-full'>
                             <div className={`${index !== 0 ? `flex` : `hidden`}`}>
                                 {item.valid ?
-                                    <div>{item.answer.split('\n').map((ans) => <p>{ans}</p>)}</div>
+                                    <div>{item.answer.split('\n').map((ans, index) => <p key={index}>{ans}</p>)}</div>
                                     :
                                     <p className='text-red-600'>{item.answer} {userStack[index - 1]}</p>
                                 }
