@@ -24,6 +24,17 @@ export default function Terminal() {
 
         if (userInput.length) {
 
+            if (userInput === 'clear') {
+                setUserStack([])
+                setTerminalStack([{
+                    answer: 'First',
+                    valid: true
+                }])
+                setUserInput('')
+                inputRef.current.value = ''
+                return;
+            }
+
             let check = true;
             commands.map((item) => {
                 if (item.command === userInput) {
@@ -108,7 +119,7 @@ export default function Terminal() {
 
                 <div className='w-full flex flex-col mb-8'>
                     {startTerminal ? terminalStack.map((item, index) =>
-                        <div className='flex flex-col w-full'>
+                        <div key={index} className='flex flex-col w-full'>
                             <div className={`${index !== 0 ? `flex` : `hidden`}`}>
                                 {item.valid ?
                                     <div>{item.answer.split('\n').map((ans) => <p>{ans}</p>)}</div>
@@ -122,7 +133,7 @@ export default function Terminal() {
                                     onChange={(e) => setUserInput(e.target.value)}
                                     onKeyDown={handleKeyPress}
                                     autoFocus
-                                    value={userStack[index]}
+                                    value={userStack[index] || userInput}
                                 />
                             </div>
                         </div>

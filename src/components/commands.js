@@ -16,7 +16,7 @@ export const commands = [
     },
     {
         id: 3,
-        command: 'sudo skills -info',
+        command: 'sudo skills -all',
         answer: 'Tech Stacks :\n• React.js • Redux.js Toolkit\n• Next.js • Node.js\nLanguages :\n• Javascript • HTML/CSS\n• C • C++\nDatabases :\n• MongoDB • MySQL\n• FireBase'
     },
 
