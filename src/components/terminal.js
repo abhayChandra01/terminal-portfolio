@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { FaCircle } from 'react-icons/fa'
 import { FiMaximize2 } from 'react-icons/fi'
 import { commands } from './commands';
+import '../assets/styles/terminal.css'
 
 export default function Terminal() {
 
@@ -21,28 +22,37 @@ export default function Terminal() {
 
     const handleTerminal = () => {
 
+        if (userInput.length) {
 
-        let check = true;
-        commands.map((item) => {
-            if (item.command === userInput) {
-                // console.log('xxxx');
+            let check = true;
+            commands.map((item) => {
+                if (item.command === userInput) {
+                    // console.log('xxxx');
+                    setUserStack([...userStack, userInput])
+                    setTerminalStack([...terminalStack, {
+                        answer: item.answer,
+                        valid: true
+                    }])
+                    check = false;
+                    return;
+                }
+            })
+            if (check === true) {
                 setUserStack([...userStack, userInput])
                 setTerminalStack([...terminalStack, {
-                    answer: item.answer,
-                    valid: true
+                    answer: 'Command not found - ',
+                    valid: false
                 }])
-                check = false;
-                return;
             }
-        })
-        if (check === true) {
-            setUserStack([...userStack, userInput])
+
+            setUserInput('')
+        } else {
+            setUserStack([...userStack, ''])
             setTerminalStack([...terminalStack, {
-                answer: 'Command not found - ',
-                valid: false
+                answer: '',
+                valid: true
             }])
         }
-
     };
 
     const handleKeyPress = (e) => {
@@ -85,7 +95,9 @@ export default function Terminal() {
                     <FiMaximize2 onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer' size={15} />
                 </div>
             </div>
-            <div className='p-2 w-full h-[50vh] overflow-y-auto'>
+            <div className='scroll-bar terminal-class'
+            // className='p-2 w-full h-[50vh] overflow-y-auto'
+            >
                 <div className='w-full flex flex-col'>
                     {startMessage && startMessage.length > 0 ? startMessage.map((msg) =>
                         <div className='font-medium'>
