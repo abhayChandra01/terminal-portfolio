@@ -6,7 +6,7 @@ import { commands } from './commands';
 
 export default function Terminal() {
 
-    const messages = ['Welcome!', 'Starting the server.', 'Please wait...']
+    const messages = ['Welcome!', 'Please Wait ... Starting the server.', 'Type sudo -help for the commands!']
     const inputRef = useRef(null)
     const [startMessage, setStartMessage] = useState([])
     const [startInterval, setStartInterval] = useState(0)
@@ -75,17 +75,17 @@ export default function Terminal() {
             <div className='flex justify-between w-full bg-gray-200 rounded-t-[10px] text-black py-1.5' >
                 <div className='ml-2 flex items-center space-x-2'>
                     <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='red' />
-                    <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='yellow' />
+                    <FaCircle onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='yellow' />
                     <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='green' />
                 </div>
                 <div>
                     Terminal
                 </div>
-                <div className='mr-2 flex items-center'>
+                <div className='mr-3 flex items-center'>
                     <FiMaximize2 onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer' size={15} />
                 </div>
             </div>
-            <div className='p-2 w-full min-h-[50vh] overflow-y-auto'>
+            <div className='p-2 w-full h-[50vh] overflow-y-auto'>
                 <div className='w-full flex flex-col'>
                     {startMessage && startMessage.length > 0 ? startMessage.map((msg) =>
                         <div className='font-medium'>
@@ -94,7 +94,7 @@ export default function Terminal() {
                     ) : null}
                 </div>
 
-                <div className='w-full flex flex-col'>
+                <div className='w-full flex flex-col mb-8'>
                     {startTerminal ? terminalStack.map((item, index) =>
                         <div className='flex flex-col w-full'>
                             <div className={`${index !== 0 ? `flex` : `hidden`}`}>
