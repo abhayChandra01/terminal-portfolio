@@ -71,54 +71,52 @@ export default function Terminal() {
     }, [startInterval])
 
     return (
-        <div className='flex justify-center items-center w-100% min-h-screen bg-[url(../assets/images/bgimage.jpg)]'>
-            <div className={`${fullScreen ? `w-full min-h-[100vh]` : `w-[70%] min-h-[50vh]`} transition-all ease-in-out duration-300 text-white rounded-[10px] bg-black bg-opacity-50 backdrop-blur-lg`}>
-                <div className='flex justify-between w-full bg-gray-200 rounded-t-[10px] text-black py-1.5' >
-                    <div className='ml-2 flex items-center space-x-2'>
-                        <FaCircle size={15} color='red' />
-                        <FaCircle size={15} color='yellow' />
-                        <FaCircle size={15} color='green' />
-                    </div>
-                    <div>
-                        Terminal
-                    </div>
-                    <div className='mr-2 flex items-center'>
-                        <FiMaximize2 onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer' size={15} />
-                    </div>
+        <div className={`${fullScreen ? `w-full min-h-[100vh]` : `w-[70%] min-h-[50vh]`} transition-all ease-in-out duration-300 text-white rounded-[10px] bg-black bg-opacity-50 backdrop-blur-lg`}>
+            <div className='flex justify-between w-full bg-gray-200 rounded-t-[10px] text-black py-1.5' >
+                <div className='ml-2 flex items-center space-x-2'>
+                    <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='red' />
+                    <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='yellow' />
+                    <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='green' />
                 </div>
-                <div className='p-2 w-full min-h-[50vh] overflow-y-auto'>
-                    <div className='w-full flex flex-col'>
-                        {startMessage && startMessage.length > 0 ? startMessage.map((msg) =>
-                            <div className='font-medium'>
-                                {msg}
-                            </div>
-                        ) : null}
-                    </div>
-
-                    <div className='w-full flex flex-col'>
-                        {startTerminal ? terminalStack.map((item, index) =>
-                            <div className='flex flex-col w-full'>
-                                <div className={`${index !== 0 ? `flex` : `hidden`}`}>
-                                    {item.valid ?
-                                        <div>{item.answer.split('\n').map((ans) => <p>{ans}</p>)}</div>
-                                        :
-                                        <p className='text-red-600'>{item.answer} {userStack[index - 1]}</p>
-                                    }
-                                </div>
-                                <div className='flex h-[25px]'>
-                                    <p className='text-green-500 min-w-[190px] font-medium'>abhayxelp@desktop : ~&nbsp;&nbsp;</p>
-                                    <input ref={inputRef} type='text' className='w-full bg-transparent focus:outline-0'
-                                        onChange={(e) => setUserInput(e.target.value)}
-                                        onKeyDown={handleKeyPress}
-                                        autoFocus
-                                        value={userStack[index]}
-                                    />
-                                </div>
-                            </div>
-                        ) : null}
-                    </div>
-
+                <div>
+                    Terminal
                 </div>
+                <div className='mr-2 flex items-center'>
+                    <FiMaximize2 onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer' size={15} />
+                </div>
+            </div>
+            <div className='p-2 w-full min-h-[50vh] overflow-y-auto'>
+                <div className='w-full flex flex-col'>
+                    {startMessage && startMessage.length > 0 ? startMessage.map((msg) =>
+                        <div className='font-medium'>
+                            {msg}
+                        </div>
+                    ) : null}
+                </div>
+
+                <div className='w-full flex flex-col'>
+                    {startTerminal ? terminalStack.map((item, index) =>
+                        <div className='flex flex-col w-full'>
+                            <div className={`${index !== 0 ? `flex` : `hidden`}`}>
+                                {item.valid ?
+                                    <div>{item.answer.split('\n').map((ans) => <p>{ans}</p>)}</div>
+                                    :
+                                    <p className='text-red-600'>{item.answer} {userStack[index - 1]}</p>
+                                }
+                            </div>
+                            <div className='flex h-[25px]'>
+                                <p className='text-green-500 min-w-[190px] font-medium'>abhayxelp@desktop : ~&nbsp;&nbsp;</p>
+                                <input ref={inputRef} type='text' className='w-full bg-transparent focus:outline-0'
+                                    onChange={(e) => setUserInput(e.target.value)}
+                                    onKeyDown={handleKeyPress}
+                                    autoFocus
+                                    value={userStack[index]}
+                                />
+                            </div>
+                        </div>
+                    ) : null}
+                </div>
+
             </div>
         </div>
     )
