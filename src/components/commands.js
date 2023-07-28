@@ -6,20 +6,24 @@ export const commands = [
             Following is a list of commands available :
             <ul className="list-disc">
                 <li className="ml-[20px]">
-                    <p className="font-semibold">sudo developer -info</p>
-                    <p className="italic">Get the basic info about the developer who built this.</p>
+                    <p className="text-[#00fff3e0] italic">sudo developer -info</p>
+                    <p>Get the basic info about the developer who built this.</p>
                 </li>
                 <li className="ml-[20px]">
-                    <p className="font-semibold">sudo brief -info</p>
-                    <p className="italic">Get a brief intro of the developer.</p>
+                    <p className="text-[#00fff3e0] italic">sudo brief -info</p>
+                    <p>Get a brief intro of the developer.</p>
                 </li>
                 <li className="ml-[20px]">
-                    <p className="font-semibold">sudo website -info</p>
-                    <p className="italic">Get the innovation and tools used to build this website.</p>
+                    <p className="text-[#00fff3e0] italic">sudo website -info</p>
+                    <p>Get the innovation and tools used to build this website.</p>
                 </li>
                 <li className="ml-[20px]">
-                    <p className="font-semibold">sudo skills -all</p>
-                    <p className="italic">Get the skillset of the developer.</p>
+                    <p className="text-[#00fff3e0] italic">sudo skills -all</p>
+                    <p>Get the skillset of the developer.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-[#00fff3e0] italic">sudo exp -list</p>
+                    <p>List of work experiences of the developer.</p>
                 </li>
             </ul>
         </div>
@@ -98,6 +102,63 @@ export const commands = [
             The website was built from <span className="text-[#00fff3e0] italic">scratch</span>, primarily using <span className="text-[#00fff3e0] italic">Next.js</span> and <span className="text-[#00fff3e0] italic">TailwindCSS</span>, with <span className="text-[#00fff3e0] italic">react-icons</span> enhancing the visual elements.<br />
             <span className="text-[#00fff3e0] italic">Vercel</span> serves as the reliable hosting platform for this creatively designed project.
         </p>
+    },
+    {
+        id: 5,
+        command: 'sudo exp -list',
+        answer: <div>
+            <p className="text-[#00fff3e0] italic">Software Engineer</p>
+            <ul className="list-disc">
+                <li className="ml-[20px]">
+                    <p className="font-semibold">Xelpmoc Design And Tech Ltd.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Bangalore</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Dec 2022 - Present</p>
+                </li>
+            </ul>
+            <div className='h-[1px] w-full my-2 bg-[#7f7f7f96]' ></div>
+            <p className="text-[#00fff3e0] italic">Full Stack Developer Intern</p>
+            <ul className="list-disc">
+                <li className="ml-[20px]">
+                    <p className="font-semibold">Xelpmoc Design And Tech Ltd.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Bangalore</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Aug 2022 - Dec 2022</p>
+                </li>
+            </ul>
+            <div className='h-[1px] w-full my-2 bg-[#7f7f7f96]' ></div>
+            <p className="text-[#00fff3e0] italic">Full Stack Developer Intern</p>
+            <ul className="list-disc">
+                <li className="ml-[20px]">
+                    <p className="font-semibold">Aurbitus</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Gwalior</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Jan 2022 - Mar 2022</p>
+                </li>
+            </ul>
+            <div className='h-[1px] w-full my-2 bg-[#7f7f7f96]' ></div>
+            <p className="text-[#00fff3e0] italic">Full Stack Developer Intern</p>
+            <ul className="list-disc">
+                <li className="ml-[20px]">
+                    <p className="font-semibold">Numeric Infosystem Pvt. Ltd.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">Gwalior</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-sm">July 2021 - Dec 2021</p>
+                </li>
+            </ul>
+        </div>
     }
 
 

@@ -7,7 +7,11 @@ import '../assets/styles/terminal.css'
 
 export default function Terminal() {
 
-    const messages = ['Welcome!', 'Please Wait ... Starting the server.', 'Type sudo -help for the commands!']
+    const messages = [
+        <p>Welcome!</p>,
+        <p>Please Wait ... Starting the server.</p>,
+        <p>Type <span className='italic text-[#00fff3e0]'>sudo -help</span> for the commands!</p>
+    ]
     const inputRef = useRef(null)
     const [startMessage, setStartMessage] = useState([])
     const [startInterval, setStartInterval] = useState(0)
@@ -134,6 +138,7 @@ export default function Terminal() {
                                 <input ref={inputRef} type='text' className='w-full bg-transparent focus:outline-0'
                                     onChange={(e) => setUserInput(e.target.value)}
                                     onKeyDown={handleKeyPress}
+                                    spellCheck={false}
                                     autoFocus
                                     value={userStack[index] || userInput}
                                 />
