@@ -95,9 +95,9 @@ export default function Terminal() {
         <div className={`${fullScreen ? `w-full min-h-[100vh]` : `w-[70%] min-h-[50vh]`} transition-all ease-in-out duration-300 text-white rounded-[10px] bg-black bg-opacity-50 backdrop-blur-lg`}>
             <div className='flex justify-between w-full bg-gray-200 rounded-t-[10px] text-black py-1.5' >
                 <div className='ml-2 flex items-center space-x-2'>
-                    <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='red' />
-                    <FaCircle onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='yellow' />
-                    <FaCircle className='cursor-pointer hover:scale-110 transition-all ease-in-out duration-300' size={15} color='green' />
+                    <div className='shadow-sm cursor-pointer w-[15px] h-[15px] bg-[#ff0000] rounded-[50%] hover:scale-110 transition-all ease-in-out duration-300'></div>
+                    <div onClick={() => setFullScreen(!fullScreen)} className='shadow-sm cursor-pointer w-[15px] h-[15px] bg-[#ffff00] rounded-[50%] hover:scale-110 transition-all ease-in-out duration-300'></div>
+                    <div className='shadow-sm cursor-pointer w-[15px] h-[15px] bg-[#008000] rounded-[50%] hover:scale-110 transition-all ease-in-out duration-300'></div>
                 </div>
                 <div>
                     Terminal
@@ -119,16 +119,18 @@ export default function Terminal() {
 
                 <div className='w-full flex flex-col mb-8'>
                     {startTerminal ? terminalStack.map((item, index) =>
-                        <div key={index} className='flex flex-col w-full'>
+                        <div key={index} className='flex flex-col w-full pr-[30px]'>
                             <div className={`${index !== 0 ? `flex` : `hidden`}`}>
                                 {item.valid ?
-                                    <div>{item.answer.split('\n').map((ans, index) => <p key={index}>{ans}</p>)}</div>
+                                    <div>
+                                        {item.answer}
+                                    </div>
                                     :
                                     <p className='text-red-600'>{item.answer} {userStack[index - 1]}</p>
                                 }
                             </div>
                             <div className='flex h-[25px]'>
-                                <p className='text-green-500 min-w-[190px] font-medium'>abhayxelp@desktop : ~&nbsp;&nbsp;</p>
+                                <p className='text-green-500 min-w-[190px] font-medium'>abhayxelp@desktop:~ $</p>
                                 <input ref={inputRef} type='text' className='w-full bg-transparent focus:outline-0'
                                     onChange={(e) => setUserInput(e.target.value)}
                                     onKeyDown={handleKeyPress}
