@@ -9,13 +9,13 @@ export default function Header() {
             <div className='flex justify-between w-full px-2'>
                 <div className='flex items-center text-sm font-medium space-x-4'>
                     <div><AiFillApple size={20} /></div>
-                    <p>Terminal</p>
-                    <p>File</p>
-                    <p>Edit</p>
-                    <p>View</p>
-                    <p>Chat</p>
-                    <p>Window</p>
-                    <p>Help</p>
+                    <p className='cursor-pointer' >Terminal</p>
+                    <p className='cursor-pointer' >File</p>
+                    <p className='cursor-pointer' >Edit</p>
+                    <p className='cursor-pointer' >View</p>
+                    <p className='cursor-pointer' >Chat</p>
+                    <p className='cursor-pointer' >Window</p>
+                    <p className='cursor-pointer' >Help</p>
                 </div>
                 <div className='flex items-center text-sm font-medium space-x-4'>
                     <div><BsBatteryHalf size={20} /></div>

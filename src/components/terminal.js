@@ -110,7 +110,7 @@ export default function Terminal() {
                     <FiMaximize2 onClick={() => setFullScreen(!fullScreen)} className='cursor-pointer' size={15} />
                 </div>
             </div>
-            <div className='scroll-bar terminal-class'
+            <div className={`scroll-bar p-2 w-full ${fullScreen ? `h-[95vh]` : `h-[50vh]`} overflow-y-auto`}
             // className='p-2 w-full h-[50vh] overflow-y-auto'
             >
                 <div className='w-full flex flex-col'>
