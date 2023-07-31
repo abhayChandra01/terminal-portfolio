@@ -183,7 +183,7 @@ export const commands = [
         command: 'sudo linkedin -link',
         answer: <div>
             <a className="text-[#00fff3e0] italic flex items-center" href="https://www.linkedin.com/in/abhay-chandra" target="_blank" >
-                Developer's Linkedin
+                Developer&apos;s Linkedin
                 <AiFillLinkedin className="ml-1 -mt-1" />
             </a>
         </div>
@@ -193,7 +193,7 @@ export const commands = [
         command: 'sudo github -link',
         answer: <div>
             <a className="text-[#00fff3e0] italic flex items-center" href="https://github.com/abhayChandra01" target="_blank" >
-                Developer's Github
+                Developer&apos;s Github
                 <AiFillGithub className="ml-1 -mt-1" />
             </a>
         </div>
@@ -203,7 +203,7 @@ export const commands = [
         command: 'sudo twitter -link',
         answer: <div>
             <a className="text-[#00fff3e0] italic flex items-center" href="https://twitter.com/deckard_abhay" target="_blank" >
-                Developer's Twitter
+                Developer&apos;s Twitter
                 <AiFillTwitterCircle className="ml-1 -mt-1" />
             </a>
         </div>
@@ -213,7 +213,7 @@ export const commands = [
         command: 'sudo mail -link',
         answer: <div>
             <a className="text-[#00fff3e0] italic flex items-center" href="mailto:a4abhaychandra@gmail.com" target="_blank" >
-                Developer's Mail
+                Developer&apos;s Mail
                 <AiFillMail className="ml-1 -mt-1" />
             </a>
         </div>
