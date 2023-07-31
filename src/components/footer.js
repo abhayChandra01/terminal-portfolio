@@ -32,7 +32,7 @@ export default function Footer({ terminalShow, setTerminalShow }) {
                     Twitter
                 </span>
                 <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <a target='_blank' href='https://github.com/abhayChandra01'>
+                    <a target='_blank' href='https://twitter.com/deckard_abhay'>
                         <BsTwitter size={22} />
                     </a>
                 </div>
@@ -43,7 +43,9 @@ export default function Footer({ terminalShow, setTerminalShow }) {
                     Linkedin
                 </span>
                 <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <BsLinkedin size={22} />
+                    <a target='_blank' href='https://www.linkedin.com/in/abhay-chandra'>
+                        <BsLinkedin size={22} />
+                    </a>
                 </div>
             </div>
 
@@ -52,7 +54,9 @@ export default function Footer({ terminalShow, setTerminalShow }) {
                     Mail
                 </span>
                 <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <AiOutlineMail size={22} />
+                    <a href="mailto:a4abhaychandra@gmail.com" target="_blank" >
+                        <AiOutlineMail size={22} />
+                    </a>
                 </div>
             </div>
 
