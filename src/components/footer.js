@@ -16,49 +16,49 @@ export default function Footer({ terminalShow, setTerminalShow }) {
                 </div>
             </div>
 
-            <div className="group relative">
-                <span className="absolute w-fit font-medium -top-12 -left-1 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
-                    Github
-                </span>
-                <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <a target='_blank' href='https://github.com/abhayChandra01'>
+            <a target='_blank' href='https://github.com/abhayChandra01'>
+                <div className="group relative">
+                    <span className="absolute w-fit font-medium -top-12 -left-1 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
+                        Github
+                    </span>
+                    <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
                         <BsGithub size={22} />
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
 
-            <div className="group relative">
-                <span className="absolute w-fit font-medium -top-12 -left-1 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
-                    Twitter
-                </span>
-                <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <a target='_blank' href='https://twitter.com/deckard_abhay'>
+            <a target='_blank' href='https://twitter.com/deckard_abhay'>
+                <div className="group relative">
+                    <span className="absolute w-fit font-medium -top-12 -left-1 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
+                        Twitter
+                    </span>
+                    <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
                         <BsTwitter size={22} />
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
 
-            <div className="group relative">
-                <span className="absolute w-fit font-medium -top-12 -left-2 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
-                    Linkedin
-                </span>
-                <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <a target='_blank' href='https://www.linkedin.com/in/abhay-chandra'>
+            <a target='_blank' href='https://www.linkedin.com/in/abhay-chandra'>
+                <div className="group relative">
+                    <span className="absolute w-fit font-medium -top-12 -left-2 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
+                        Linkedin
+                    </span>
+                    <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
                         <BsLinkedin size={22} />
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
 
-            <div className="group relative">
-                <span className="absolute w-fit font-medium -top-12 left-1 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
-                    Mail
-                </span>
-                <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
-                    <a href="mailto:a4abhaychandra@gmail.com" target="_blank" >
+            <a href="mailto:a4abhaychandra@gmail.com" target="_blank" >
+                <div className="group relative">
+                    <span className="absolute w-fit font-medium -top-12 left-1 scale-0 transition-all rounded bg-white bg-opacity-70 backdrop-blur-lg p-2 text-xs text-black group-hover:scale-100">
+                        Mail
+                    </span>
+                    <div className='bg-white px-3 py-2.5 rounded-lg cursor-pointer hover:scale-110 hover:text-green-500 transition-all ease-in-out duration-300'>
                         <AiOutlineMail size={22} />
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <div>
                 <div className='h-full w-[2px] bg-[#7f7f7f96]' ></div>
