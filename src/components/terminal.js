@@ -35,7 +35,10 @@ export default function Terminal() {
                     valid: true
                 }])
                 setUserInput('')
-                inputRef.current.value = ''
+
+                if (inputRef?.current?.value) {
+                    inputRef.current.value = ''
+                }
                 return;
             }
 
@@ -62,11 +65,12 @@ export default function Terminal() {
 
             setUserInput('')
         } else {
-            setUserStack([...userStack, ''])
-            setTerminalStack([...terminalStack, {
-                answer: '',
-                valid: true
-            }])
+            return;
+            // setUserStack([...userStack, ''])
+            // setTerminalStack([...terminalStack, {
+            //     answer: '',
+            //     valid: true
+            // }])
         }
     };
 
