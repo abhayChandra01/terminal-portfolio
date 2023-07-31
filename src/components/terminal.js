@@ -8,9 +8,18 @@ import '../assets/styles/terminal.css'
 export default function Terminal() {
 
     const messages = [
-        <p>Welcome!</p>,
-        <p>Please Wait ... Starting the server.</p>,
-        <p>Type <span className='italic text-[#00fff3e0]'>sudo -help</span> for the commands!</p>
+        {
+            id: 1,
+            msg: <p>Welcome!</p>
+        },
+        {
+            id: 2,
+            msg: <p>Please Wait ... Starting the server.</p>
+        },
+        {
+            id: 3,
+            msg: <p>Type <span className='italic text-[#00fff3e0]'>sudo -help</span> for the commands!</p>
+        },
     ]
     const inputRef = useRef(null)
     const [startMessage, setStartMessage] = useState([])
@@ -85,9 +94,9 @@ export default function Terminal() {
         const delayDebounce = setTimeout(() => {
 
             if (startInterval !== 3) {
-                let list = []
-                list.push(messages[startInterval])
-                setStartMessage([...startMessage, list])
+                // let list = []
+                // list.push(messages[startInterval])
+                setStartMessage([...startMessage, messages[startInterval]])
                 setStartInterval(startInterval + 1)
             } else {
                 setStartTerminal(true)
@@ -120,7 +129,7 @@ export default function Terminal() {
                 <div className='w-full flex flex-col'>
                     {startMessage && startMessage.length > 0 ? startMessage.map((msg, index) =>
                         <div key={index} className='font-medium'>
-                            {msg}
+                            {msg.msg}
                         </div>
                     ) : null}
                 </div>
