@@ -1,3 +1,5 @@
+import { AiFillGithub, AiFillLinkedin, AiFillMail, AiFillTwitterCircle } from "react-icons/ai";
+
 export const commands = [
     {
         id: 0,
@@ -24,6 +26,22 @@ export const commands = [
                 <li className="ml-[20px]">
                     <p className="text-[#00fff3e0] italic">sudo exp -list</p>
                     <p>List of work experiences of the developer.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-[#00fff3e0] italic">sudo mail -link</p>
+                    <p>Get the mail id of the developer.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-[#00fff3e0] italic">sudo linkedin -link</p>
+                    <p>Get the Linkedin profile of the developer.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-[#00fff3e0] italic">sudo github -link</p>
+                    <p>Get the Github profile of the developer.</p>
+                </li>
+                <li className="ml-[20px]">
+                    <p className="text-[#00fff3e0] italic">sudo twitter -link</p>
+                    <p>Get the Twitter profile of the developer.</p>
                 </li>
             </ul>
         </div>
@@ -158,6 +176,46 @@ export const commands = [
                     <p className="text-sm">July 2021 - Dec 2021</p>
                 </li>
             </ul>
+        </div>
+    },
+    {
+        id: 6,
+        command: 'sudo linkedin -link',
+        answer: <div>
+            <a className="text-[#00fff3e0] italic flex items-center" href="https://www.linkedin.com/in/abhay-chandra" target="_blank" >
+                Developer's Linkedin
+                <AiFillLinkedin className="ml-1 -mt-1" />
+            </a>
+        </div>
+    },
+    {
+        id: 7,
+        command: 'sudo github -link',
+        answer: <div>
+            <a className="text-[#00fff3e0] italic flex items-center" href="https://github.com/abhayChandra01" target="_blank" >
+                Developer's Github
+                <AiFillGithub className="ml-1 -mt-1" />
+            </a>
+        </div>
+    },
+    {
+        id: 8,
+        command: 'sudo twitter -link',
+        answer: <div>
+            <a className="text-[#00fff3e0] italic flex items-center" href="https://twitter.com/deckard_abhay" target="_blank" >
+                Developer's Twitter
+                <AiFillTwitterCircle className="ml-1 -mt-1" />
+            </a>
+        </div>
+    },
+    {
+        id: 9,
+        command: 'sudo mail -link',
+        answer: <div>
+            <a className="text-[#00fff3e0] italic flex items-center" href="mailto:a4abhaychandra@gmail.com" target="_blank" >
+                Developer's Mail
+                <AiFillMail className="ml-1 -mt-1" />
+            </a>
         </div>
     }
 
